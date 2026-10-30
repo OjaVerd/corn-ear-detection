@@ -1,0 +1,7 @@
+data/
+*.mp4
+*.mov
+*.avi
+.venv/
+__pycache__/
+.ipynb_checkpoints/
