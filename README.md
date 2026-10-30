@@ -1,6 +1,6 @@
 # Corn Ear Detection
 
-A deep-learning system that detects corn ears (and the ear-to-stalk region) in field videos. Built for COSC 4346, Fall 2026, at Texas A&M University–Corpus Christi.
+A deep-learning system that detects corn ears (and the ear-to-stalk region) in field videos. 
 
 ## Overview
 
