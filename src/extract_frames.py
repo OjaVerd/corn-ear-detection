@@ -19,6 +19,8 @@ def extract_frames(video_folder, output_folder):
 
     print(f"\nFound {len(videos)} videos in {video_folder.name}")
 
+    total_saved = 0
+
     for video_path in videos:
 
         print(f"Processing {video_path.name}")
@@ -35,8 +37,8 @@ def extract_frames(video_folder, output_folder):
             if not success:
                 break
 
-            # Save every 100th frame
-            if frame_count % 100 == 0:
+            # Save every 500th frame
+            if frame_count % 500 == 0:
 
                 filename = (
                     output_folder /
@@ -51,11 +53,28 @@ def extract_frames(video_folder, output_folder):
 
         cap.release()
 
+        total_saved += saved_count
+
         print(f"  Saved {saved_count} frames")
 
+    return total_saved
 
-# Run extraction for both folders
-extract_frames(CAMERA_2FT, FRAMES_2FT)
-extract_frames(CAMERA_4FT, FRAMES_4FT)
 
-print("\nFinished.")
+# Process 2-ft videos
+total_2ft_frames = extract_frames(
+    CAMERA_2FT,
+    FRAMES_2FT
+)
+
+# Process 4-ft videos
+total_4ft_frames = extract_frames(
+    CAMERA_4FT,
+    FRAMES_4FT
+)
+
+# Summary
+print("\n===== EXTRACTION SUMMARY =====")
+
+print(f"2-ft frames saved: {total_2ft_frames}")
+print(f"4-ft frames saved: {total_4ft_frames}")
+print(f"Total frames saved: {total_2ft_frames + total_4ft_frames}")
