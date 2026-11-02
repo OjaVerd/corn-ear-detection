@@ -26,4 +26,15 @@ How I should extract frames?
 
 
 annotation tool:
-- Labeling + bounding boxes
+- Labelme
+
+videos examined: 40
+
+frames extracted:42
+
+
+annotation format:
+bounding boxes
+
+Class name:
+corn_ear
